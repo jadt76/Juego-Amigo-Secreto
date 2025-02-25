@@ -1,0 +1,367 @@
+:root {
+    --color-primary: #4B69FD;
+    --color-secondary: #FFF9EB;
+    --color-tertiary: #C4C4C4;
+    --color-button: #fe652b;
+    --color-button-hover: #e55720;
+    --color-text: #444444;
+    --color-white: #FFFFFF;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* Banner */
+.header-banner {
+    flex: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0 0;
+}
+
+/* Títulos */
+.main-title {
+    font-size: 48px;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+}
+
+/* Sección de entrada */
+.input-section {
+    flex: 60%;
+    background-color: var(--color-secondary);
+    border: 1px solid #000;
+    border-radius: 64px 64px 0 0;
+    box-shadow: 0 2px 4px rgba(red, green, blue, alpha);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.section-title {
+    font-family: "Inter", serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #555;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Contenedores de entrada y botón */
+.input-wrapper {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.input-name {
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 25px 25px 25px 25px;
+    font-size: 1rem;
+}
+
+.button-add, #borrarLista, #copiarLista {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px 25px 25px 25px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button-add:hover, #borrarLista:hover, #copiarLista:hover {
+    background-color: #0056b3;
+}
+
+/* Contenedor de las dos columnas */
+.list-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.name-list-container, .result-list-container {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+}
+
+.list-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilos para las listas */
+.name-list, .result-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.result-list {
+    margin-top: 10px;
+    color: #05df79;
+    font-size: 16px;
+    font-weight:lighter;
+    text-align: center;
+}
+
+.name-list li, .result-list li {
+    padding: 10px;
+    margin: 5px 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 25px 25px 25px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name-list li:hover {
+    background-color: #ffcccc; /* Fondo rojo al pasar el mouse */
+}
+
+.borrar-nombre {
+    cursor: pointer;
+    color: red;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+/* Botón de sortear */
+.button-container {
+    text-align: center;
+    justify-content: center;
+}
+
+.button-draw {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    /*background-color: #28a745;*/
+    background-color: var(--color-button);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-draw:hover {
+    background-color: #218838;
+}
+
+.button-draw img {
+    margin-right: 5px;
+    border-radius: 25px 25px 25px 25px;
+}
+
+/* Mensaje de error */
+#error-message {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Media Queries para Responsive Design */
+@media screen and (max-width: 1024px) {
+    .main-content {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .header-banner {
+        padding: 20px 0;
+    }
+
+    .main-title {
+        font-size: 36px;
+    }
+
+    .input-section {
+        padding: 20px 15px;
+    }
+
+    .list-container {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .input-wrapper {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .button-add, #borrarLista, #copiarLista {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .list-container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .name-list-container, 
+    .result-list-container {
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        height: auto;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .header-banner {
+        padding: 15px 0;
+    }
+
+    .main-title {
+        font-size: 28px;
+    }
+
+    .input-section {
+        border-radius: 32px 32px 0 0;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .input-name {
+        padding: 8px;
+    }
+
+    .name-list li, 
+    .result-list li {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .button-draw {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .button-draw img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media screen and (max-width: 320px) {
+    .main-title {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 1rem;
+    }
+
+    .input-wrapper {
+        padding: 0 10px;
+    }
+
+    .button-add, 
+    #borrarLista, 
+    #copiarLista {
+        font-size: 0.9rem;
+    }
+}
+
+/* Ajustes para orientación landscape en móviles */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    body {
+        height: auto;
+    }
+
+    .main-content {
+        min-height: 100vh;
+    }
+
+    .header-banner {
+        padding: 10px 0;
+    }
+
+    .input-section {
+        border-radius: 32px 32px 0 0;
+    }
+
+    .list-container {
+        flex-direction: row;
+    }
+}
+
+/* Ajustes para dispositivos de alta resolución */
+@media screen and (min-width: 1440px) {
+    .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .input-wrapper {
+        max-width: 900px;
+    }
+
+    .main-title {
+        font-size: 56px;
+    }
+}
+
